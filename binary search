@@ -1,0 +1,73 @@
+#include<stdio.h> 
+
+int binarysearch(int*,int,int); 
+
+int main() 
+
+{ 
+
+     int i,n,a[20],key,pos; 
+
+     printf("Enter n:"); 
+
+     scanf("%d",&n); 
+
+     printf("enter %d elements\n",n); 
+
+     for(i=0;i<n;i++) 
+     {
+
+         scanf("%d",&a[i]); 
+     }    
+
+     printf("enter key:"); 
+
+     scanf("%d",&key); 
+
+     pos=binarysearch(a,n,key); 
+
+     if(pos==-1) 
+     {
+
+        printf("Search is unsuccessful\n"); 
+     }   
+
+     else 
+
+        printf("Key is found at the index:%d\n",pos); 
+
+     return 0; 
+
+} 
+
+int binarysearch(int a[], int n,int key) 
+
+{ 
+
+   int low=0;
+   int high=n-1; 
+
+    while(low<=high) 
+
+    { 
+
+       int mid=(low+high)/2; 
+
+          if(key==a[mid]) 
+          {
+            return mid; 
+          } 
+
+          else if(key<a[mid])
+               {
+                  high=mid-1; 
+               }  
+
+               else 
+                  low=mid+1; 
+
+    } 
+
+    return -1; 
+
+}
