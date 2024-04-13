@@ -1,0 +1,38 @@
+#include<stdio.h>
+
+void reversearray(int[], int);
+
+int main()
+
+{
+
+    int a[5],n,i;
+    printf("Enter n:");
+    scanf("%d",&n);
+    printf("Enter %d elements:",n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    reversearray(a,n);
+    printf("reversed array is");
+    for(i=0;i<n;i++)
+    {
+        printf("%4d",a[i]);
+    }
+    return 0;
+}
+void reversearray(int a[],int n)
+{
+     int i,temp;
+     int j=n-1;
+     for(i=0;i<j;i++)
+     {
+         temp=a[i];
+         a[i]=a[j];
+         a[j]=temp;
+         j--;
+     }
+}
+
+    
